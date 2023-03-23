@@ -1,6 +1,6 @@
 const {verify} = require ("jsonwebtoken")
 const AppError = require ("../utils/AppError")
-const authConfig = ("../config/auth.js")
+const authConfig = require("../config/auth.js")
 
 function ensureAuthenticated(request, response, next){
 
@@ -18,6 +18,7 @@ function ensureAuthenticated(request, response, next){
       request.user ={
         id: Number(user_id)
       }
+      console.log(Error)
 
       return next()
   } catch{
